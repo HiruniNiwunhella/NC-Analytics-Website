@@ -1,0 +1,452 @@
+/* NC Analytics and AI Day — matched to NYC Ops Day template */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    color: #2a2e35;
+    background: #fafbfc;
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Frozen top bar — thin, white, just title at left */
+.top-bar {
+    background: #ffffff;
+    border-bottom: 1px solid #e3e6eb;
+    padding: 12px 28px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(13, 33, 71, 0.06);
+}
+
+.top-bar .brand {
+    font-family: "Open Sans", "Roboto", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0d2147;
+    letter-spacing: 0.2px;
+}
+
+.top-bar .brand a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hero banner with image background and overlaid centered title */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background: #1a1a1a url("hero.jpg?v=4") center center / cover no-repeat;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(13, 33, 71, 0.55) 0%,
+        rgba(13, 33, 71, 0.35) 50%,
+        rgba(13, 33, 71, 0.65) 100%
+    );
+}
+
+.hero-inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: "Oswald", "Roboto Condensed", "Arial Narrow", sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.05;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    max-width: 1100px;
+}
+
+.hero .divider {
+    width: 280px;
+    max-width: 60%;
+    height: 3px;
+    background: #c9a96e;
+    margin: 0 auto 16px auto;
+    border-radius: 2px;
+}
+
+.hero .year {
+    font-family: "Oswald", "Roboto Condensed", "Arial Narrow", sans-serif;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.hero .nickname {
+    font-family: "Oswald", "Roboto Condensed", "Arial Narrow", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Section bands — full-width colored bar with uppercase white title */
+.section-band {
+    background: #0d2147;
+    color: #ffffff;
+    padding: 20px 24px;
+    text-align: center;
+    margin: 32px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.section-band h2 {
+    font-family: "Oswald", "Roboto Condensed", "Arial Narrow", sans-serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin: 0;
+}
+
+/* Centered narrow content */
+.content-narrow {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 28px;
+    text-align: center;
+}
+
+.content-narrow.left {
+    text-align: left;
+}
+
+.content-narrow p {
+    margin-bottom: 18px;
+    color: #333;
+    font-size: 1.02rem;
+}
+
+.content-narrow ul,
+.content-narrow ol {
+    text-align: left;
+    margin: 14px auto 18px auto;
+    color: #333;
+    display: inline-block;
+}
+
+.content-narrow li {
+    margin-bottom: 6px;
+}
+
+a {
+    color: #102a5f;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #CC0000;
+}
+
+strong {
+    color: #111;
+    font-weight: 700;
+}
+
+.notice {
+    color: #b71c1c;
+    font-weight: 600;
+}
+
+.divider-line {
+    border: none;
+    border-top: 2px solid #102a5f;
+    max-width: 760px;
+    margin: 36px auto;
+}
+
+/* Big centered When/Where heading block */
+.when-where {
+    text-align: center;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.when-where p {
+    font-family: "Oswald", "Roboto Condensed", "Arial Narrow", sans-serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+    line-height: 1.25;
+}
+
+/* Registration: gray section, two cards side by side */
+.reg-section {
+    background: #f1f4f9;
+    padding: 50px 24px;
+    margin-top: 0;
+}
+
+.reg-grid {
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.reg-card {
+    text-align: center;
+}
+
+.reg-card .reg-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #8b2635;
+    text-decoration: underline;
+    margin-bottom: 16px;
+}
+
+.reg-card.student .reg-title {
+    color: #1b5e20;
+}
+
+.reg-card .reg-sub {
+    font-weight: 700;
+    color: #8b2635;
+    margin-bottom: 22px;
+    font-size: 1rem;
+}
+
+.reg-card.student .reg-sub {
+    color: #1b5e20;
+}
+
+.reg-card .reg-details {
+    text-align: left;
+    background: transparent;
+    margin: 0 auto 22px auto;
+    max-width: 420px;
+    color: #333;
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.reg-card .reg-details strong {
+    color: #111;
+}
+
+.reg-card .reg-warning {
+    color: #b71c1c;
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+}
+
+.reg-btn {
+    display: inline-block;
+    width: auto;
+    min-width: 200px;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 11px 28px;
+    background: #8b2635;
+    color: #ffffff !important;
+    font-size: 1.02rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    text-align: center;
+    border-radius: 4px;
+    transition: background 0.15s, transform 0.1s;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.reg-btn:hover {
+    background: #6e1c28;
+    transform: translateY(-1px);
+}
+
+.reg-card.student .reg-btn {
+    background: #1b5e20;
+}
+
+.reg-card.student .reg-btn:hover {
+    background: #134416;
+}
+
+.reg-btn.disabled {
+    background: #1b5e20;
+    cursor: default;
+    opacity: 0.85;
+}
+
+/* People list — centered bullet list with linked names */
+.people {
+    list-style: disc;
+    text-align: left;
+    margin: 14px auto 22px auto;
+    padding-left: 0;
+    display: inline-block;
+}
+
+.people li {
+    margin-bottom: 8px;
+    color: #333;
+    list-style-position: inside;
+}
+
+.people .name {
+    font-weight: 700;
+    color: #102a5f;
+}
+
+.people a {
+    color: #102a5f;
+    text-decoration: underline;
+}
+
+.sub-list-heading {
+    font-weight: 700;
+    color: #222;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.logistics-h {
+    font-family: "Oswald", "Roboto Condensed", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #102a5f;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #102a5f;
+}
+
+/* Program table — centered */
+.program-table-wrap {
+    max-width: 760px;
+    margin: 24px auto 0 auto;
+    padding: 0 24px;
+}
+
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border: 1px solid #ddd;
+}
+
+.program-table th,
+.program-table td {
+    text-align: left;
+    padding: 12px 18px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.program-table tr:last-child td {
+    border-bottom: none;
+}
+
+.program-table th {
+    background: #f5f5f5;
+    color: #222;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.program-table td:first-child {
+    color: #102a5f;
+    font-weight: 600;
+    white-space: nowrap;
+    width: 200px;
+}
+
+/* Footer */
+.site-footer {
+    background: #0d2147;
+    border-top: 1px solid #0d2147;
+    padding: 28px 24px;
+    color: #c9d2e3;
+    font-size: 0.88rem;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+    .hero {
+        height: 300px;
+    }
+    .hero h1 {
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+    }
+    .hero .year {
+        font-size: 1.9rem;
+        margin-bottom: 12px;
+    }
+    .hero .nickname {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+    }
+    .hero .divider {
+        height: 3px;
+        width: 200px;
+        margin-bottom: 12px;
+    }
+    .section-band h2 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+    .when-where p {
+        font-size: 1.3rem;
+    }
+    .reg-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .reg-section {
+        padding: 40px 20px;
+    }
+    .reg-card .reg-title {
+        font-size: 1.3rem;
+    }
+}
