@@ -360,7 +360,7 @@ strong {
 
 /* Program table — centered */
 .program-table-wrap {
-    max-width: 760px;
+    max-width: 540px;
     margin: 24px auto 0 auto;
     padding: 0 24px;
 }
