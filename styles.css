@@ -48,7 +48,7 @@ body {
     position: relative;
     width: 100%;
     height: 380px;
-    background: #1a1a1a url("hero.jpg?v=4") center center / cover no-repeat;
+    background: #1a1a1a url("image.jpg?v=5") center center / cover no-repeat;
     overflow: hidden;
 }
 
