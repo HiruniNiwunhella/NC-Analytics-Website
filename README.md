@@ -11,11 +11,10 @@ Industrial and Systems Engineering.
 ## Files
 
 - `index.html` — main conference homepage
-- `compare.html` — internal page for comparing hero image options
 - `styles.css` — shared stylesheet
-- `hero.jpg` — current hero image (Hunt Library exterior, angled view)
-- `hero-hunt1.jpg`, `hero-hunt2.jpg`, `hero-night.jpg` — alternate hero options
+- `hero.jpg` — hero image (Hunt Library exterior, angled view)
 - `conference_info.docx` — source content document
+- `conference_schedule+speakers.docx` — schedule and speaker source document
 
 ## Running locally
 
